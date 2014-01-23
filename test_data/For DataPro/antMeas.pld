@@ -1,0 +1,169 @@
+* Plot Definition File for Antenna Measurement Tool
+* Author: ... Tuomas Leinonen, Aalto/ELEC/RAD
+* Date: ..... 31.5.2013
+* Credits: .. The author(s) of the original ASCII.pld
+* 
+* This file supports up to 90 overlays.
+*
+orientation, portrait
+define_coordinates,8000,5000
+background_color,white
+data_list, 909
+listing_header,0
+fixed_parameter,black,1,0,"File: $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",file
+end_line
+plot_variable, black,1,0,"Comment: $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",comment,1
+end_line
+fixed_parameter,black,1,0,"Freq: $$$$$$$.$$$$$$ GHz",freq
+end_line
+*
+* Check for x-axis being primary angle...
+*
+if,x-axis,primary
+  if,overlay,freq
+    text,black,1,0,horz,"Prim/Freq;"
+    fixed_parameter,black,12,0,"$$.$$$;   ",freq
+  endif
+  if,overlay,angle
+    text,black,1,0,horz,"Prim/Scndry;"
+    fixed_parameter,black,15,0,"$$$$.$$;  ",sec
+  endif
+  if,overlay,chan
+    text,black,1,0,horz,"Prim/Chan;"
+    *fixed_parameter,black,15,0,"$$$$$$$$;",chan
+  endif
+  if,overlay,file
+    text,black,1,0,horz,"Prim/File;"
+    fixed_parameter,black,15,0,"$$$$$$$$$$$$$$$$; ",file
+  endif
+endif
+*
+* Check for x-axis being frequency...
+*
+if,x-axis,freq
+  if,overlay,angle
+    text,black,1,0,horz,"Freq/Prim;"
+    fixed_parameter,black,15,0,"$$$$.$$;  ",prim
+  endif
+  if,overlay,chan
+    text,black,1,0,horz,"Freq/Chan;"
+    *fixed_parameter,black,15,0,"$$$$$$$$;",chan
+  endif
+  if,overlay,file
+    text,black,1,0,horz,"Freq/File;"
+    fixed_parameter,black,15,0,"$$$$$$$$$$$$$; ",file
+  endif
+endif
+*
+* Check for x-axis being time...
+*
+if,x-axis,freq,OR
+if,x-axis,angle
+else
+  if,overlay,angle
+    text,black,1,0,horz,"Time/Prim;"
+    fixed_parameter,black,15,0,"$$$$.$$;  ",prim
+  endif
+  if,overlay,chan
+    text,black,1,0,horz,"Time/Chan;"
+    *fixed_parameter,black,15,0,"$$$$$$$$;",chan
+  endif
+  if,overlay,file
+    text,black,1,0,horz,"Time/File;"
+    fixed_parameter,black,15,0,"$$$$$$$$; ",file
+  endif
+endif
+end_line
+*
+body
+list_variable, black,  1, "$$$$.$$;", x_var
+list_variable, black, 11, "$$$$.$$;", y_var
+list_variable, black, 21, "$$$$.$$;", y_var
+list_variable, black, 31, "$$$$.$$;", y_var
+list_variable, black, 41, "$$$$.$$;", y_var
+list_variable, black, 51, "$$$$.$$;", y_var
+list_variable, black, 61, "$$$$.$$;", y_var
+list_variable, black, 71, "$$$$.$$;", y_var
+list_variable, black, 81, "$$$$.$$;", y_var
+list_variable, black, 91, "$$$$.$$;", y_var
+list_variable, black,101, "$$$$.$$;", y_var
+list_variable, black,111, "$$$$.$$;", y_var
+list_variable, black,121, "$$$$.$$;", y_var
+list_variable, black,131, "$$$$.$$;", y_var
+list_variable, black,141, "$$$$.$$;", y_var
+list_variable, black,151, "$$$$.$$;", y_var
+list_variable, black,161, "$$$$.$$;", y_var
+list_variable, black,171, "$$$$.$$;", y_var
+list_variable, black,181, "$$$$.$$;", y_var
+list_variable, black,191, "$$$$.$$;", y_var
+list_variable, black,201, "$$$$.$$;", y_var
+list_variable, black,211, "$$$$.$$;", y_var
+list_variable, black,221, "$$$$.$$;", y_var
+list_variable, black,231, "$$$$.$$;", y_var
+list_variable, black,241, "$$$$.$$;", y_var
+list_variable, black,251, "$$$$.$$;", y_var
+list_variable, black,261, "$$$$.$$;", y_var
+list_variable, black,271, "$$$$.$$;", y_var
+list_variable, black,281, "$$$$.$$;", y_var
+list_variable, black,291, "$$$$.$$;", y_var
+list_variable, black,301, "$$$$.$$;", y_var
+list_variable, black,311, "$$$$.$$;", y_var
+list_variable, black,321, "$$$$.$$;", y_var
+list_variable, black,331, "$$$$.$$;", y_var
+list_variable, black,341, "$$$$.$$;", y_var
+list_variable, black,351, "$$$$.$$;", y_var
+list_variable, black,361, "$$$$.$$;", y_var
+list_variable, black,371, "$$$$.$$;", y_var
+list_variable, black,381, "$$$$.$$;", y_var
+list_variable, black,391, "$$$$.$$;", y_var
+list_variable, black,401, "$$$$.$$;", y_var
+list_variable, black,411, "$$$$.$$;", y_var
+list_variable, black,421, "$$$$.$$;", y_var
+list_variable, black,431, "$$$$.$$;", y_var
+list_variable, black,441, "$$$$.$$;", y_var
+list_variable, black,451, "$$$$.$$;", y_var
+list_variable, black,461, "$$$$.$$;", y_var
+list_variable, black,471, "$$$$.$$;", y_var
+list_variable, black,481, "$$$$.$$;", y_var
+list_variable, black,491, "$$$$.$$;", y_var
+list_variable, black,501, "$$$$.$$;", y_var
+list_variable, black,511, "$$$$.$$;", y_var
+list_variable, black,521, "$$$$.$$;", y_var
+list_variable, black,531, "$$$$.$$;", y_var
+list_variable, black,541, "$$$$.$$;", y_var
+list_variable, black,551, "$$$$.$$;", y_var
+list_variable, black,561, "$$$$.$$;", y_var
+list_variable, black,571, "$$$$.$$;", y_var
+list_variable, black,581, "$$$$.$$;", y_var
+list_variable, black,591, "$$$$.$$;", y_var
+list_variable, black,601, "$$$$.$$;", y_var
+list_variable, black,611, "$$$$.$$;", y_var
+list_variable, black,621, "$$$$.$$;", y_var
+list_variable, black,631, "$$$$.$$;", y_var
+list_variable, black,641, "$$$$.$$;", y_var
+list_variable, black,651, "$$$$.$$;", y_var
+list_variable, black,661, "$$$$.$$;", y_var
+list_variable, black,671, "$$$$.$$;", y_var
+list_variable, black,681, "$$$$.$$;", y_var
+list_variable, black,691, "$$$$.$$;", y_var
+list_variable, black,701, "$$$$.$$;", y_var
+list_variable, black,711, "$$$$.$$;", y_var
+list_variable, black,721, "$$$$.$$;", y_var
+list_variable, black,731, "$$$$.$$;", y_var
+list_variable, black,741, "$$$$.$$;", y_var
+list_variable, black,751, "$$$$.$$;", y_var
+list_variable, black,761, "$$$$.$$;", y_var
+list_variable, black,771, "$$$$.$$;", y_var
+list_variable, black,781, "$$$$.$$;", y_var
+list_variable, black,791, "$$$$.$$;", y_var
+list_variable, black,801, "$$$$.$$;", y_var
+list_variable, black,811, "$$$$.$$;", y_var
+list_variable, black,821, "$$$$.$$;", y_var
+list_variable, black,831, "$$$$.$$;", y_var
+list_variable, black,841, "$$$$.$$;", y_var
+list_variable, black,851, "$$$$.$$;", y_var
+list_variable, black,861, "$$$$.$$;", y_var
+list_variable, black,871, "$$$$.$$;", y_var
+list_variable, black,881, "$$$$.$$;", y_var
+list_variable, black,891, "$$$$.$$;", y_var
+list_variable, black,901, "$$$$.$$;", y_var
